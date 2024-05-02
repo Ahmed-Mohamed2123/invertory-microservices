@@ -24,7 +24,7 @@ export class UserService {
   public async createSystemUser(createSystemUserInput: CreateSystemUserInput): Promise<User> {
     const messagePayload = new RmqRecord(createSystemUserInput, this.rmqRecordOptions);
 
-    const execution$ = this.userClient.send("create-system-user", messagePayload);
+    const execution$ = this.userClient.send("create-system-admin-user", messagePayload);
     return lastValueFrom(execution$);
   }
 }

@@ -1,0 +1,27 @@
+scalar ObjectId
+scalar Date
+
+type Customer {
+    first_name: String!
+    last_name: String!
+    email: String!
+    mobileNumber: String!
+    createdAt: Date!
+    updatedAt: Date!
+    _id: ObjectId!
+}
+
+input CreateCustomerInput {
+    first_name: String!
+    last_name: String!
+    email: String!
+    mobileNumber: String!
+}
+
+type Query {
+    customers: [Customer!]!
+}
+
+type Mutation {
+    createCustomer(createCustomerInput: CreateCustomerInput!): Customer!
+}

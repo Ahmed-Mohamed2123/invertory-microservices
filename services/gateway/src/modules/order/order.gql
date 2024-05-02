@@ -1,0 +1,62 @@
+scalar ObjectId
+scalar Date
+
+type Order {
+    status: String!
+    customerId: ObjectId!
+    createdAt: Date!
+    updatedAt: Date!
+    _id: ObjectId!
+}
+
+type OrderDetail {
+    quantity: Int!
+    price: Int!
+    inventoryItemId: ObjectId!
+    orderId: ObjectId!
+    createdAt: Date!
+    updatedAt: Date!
+    _id: ObjectId!
+}
+
+type OrderAcceptionResponse {
+    success: Boolean!
+}
+
+type OrderRejectionResponse {
+    success: Boolean!
+}
+
+type OrderDetailCreationResponse {
+    success: Boolean!
+}
+
+
+input OrderDetailInput {
+    quantity: Int!
+    price: Int!
+    inventoryItemId: ObjectId!
+    orderId: ObjectId!
+}
+
+input CreateOrderDetailInput {
+    orderDetails: [OrderDetailInput!]!
+}
+
+type CustomerOrderDetail {
+    _id: ObjectId!
+    status: String!
+    customerId: ObjectId!
+    orderDetails: [OrderDetail!]!
+}
+
+type Query {
+    getCustomerOrdersDetails(customerId: String!): [CustomerOrderDetail!]!
+}
+
+type Mutation {
+    initiateOrder(customerId: String!): Order!
+    acceptOrder(orderId: String!): OrderAcceptionResponse!
+    rejectOrder(orderId: String!): OrderRejectionResponse!
+    createOrderDetails(createOrderDetailInput: CreateOrderDetailInput!): OrderDetailCreationResponse!
+}

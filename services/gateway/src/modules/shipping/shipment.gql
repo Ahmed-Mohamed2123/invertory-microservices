@@ -1,0 +1,28 @@
+scalar ObjectId
+scalar Date
+
+type Shipment {
+    orderId: String!
+    deliveryStatus: String!
+    createdAt: Date!
+    updatedAt: Date!
+    _id: ObjectId!
+}
+
+input UpdateShipmentStatusInput {
+    shipmentId: String!
+    deliveryStatus: String!
+}
+
+type ShipmentStatusUpdateResponse {
+    success: Boolean!
+}
+
+type Query {
+    getShipmentById(shipmentId: String!): Shipment!
+}
+
+type Mutation {
+    initiateShipment(orderId: String!): Shipment!
+    updateShipmentStatus(updateShipmentStatusInput: UpdateShipmentStatusInput!): ShipmentStatusUpdateResponse!
+}

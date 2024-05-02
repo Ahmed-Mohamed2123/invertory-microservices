@@ -1,0 +1,34 @@
+scalar ObjectId
+scalar Date
+
+type Invoice {
+    totalAmount: Int!
+    customerId: ObjectId!
+    orderId: ObjectId!
+    paymentTransactionId: String!
+    createdAt: Date!
+    updatedAt: Date!
+    _id: ObjectId!
+}
+
+input GetCustomerInvoiceArgs {
+    customerId: ObjectId!
+    limit: Int!
+}
+
+input CreateInvoiceInput {
+    orderId: ObjectId!
+    paymentTransactionId: ObjectId!
+    customerId: ObjectId!
+    totalAmount: Int!
+}
+
+type Query {
+    getCustomerInvoices(getCustomerInvoiceArgs: GetCustomerInvoiceArgs!): [Invoice!]!
+    getCustomerInvoicesCount(customerId: String!): Int!
+}
+
+type Mutation {
+    createInvoice(createInvoiceInput: CreateInvoiceInput!): Invoice!
+}
+

@@ -1,0 +1,25 @@
+scalar ObjectId
+scalar Date
+
+type User {
+    username: String!
+    password: String!
+    roles: [String!]!
+    createdAt: Date!
+    updatedAt: Date!
+    _id: ObjectId!
+}
+
+input CreateSystemUserInput {
+    username: String!
+    password: String!
+    roles: [String!]!
+}
+
+type Query {
+    users: [User!]!
+}
+
+type Mutation {
+    createSystemUser(createSystemUserInput: CreateSystemUserInput!): User!
+}

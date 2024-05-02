@@ -1,0 +1,87 @@
+scalar ObjectId
+scalar Date
+
+type Inventory {
+    name: String!
+    location: String!
+    createdAt: Date!
+    updatedAt: Date!
+    _id: ObjectId!
+}
+
+type InventoryItem {
+    name: String!
+    description: String!
+    price: Float!
+    createdAt: Date!
+    updatedAt: Date!
+    _id: ObjectId!
+}
+
+input CreateInventoryInput {
+    name: String!
+    location: String!
+}
+
+input EditInventoryInput {
+    name: String!
+    location: String!
+    inventoryId: ObjectId!
+}
+
+input GetInventoryArgs {
+    page: Int!
+    limit: Int!
+}
+
+type EditInventoryResponse {
+    success: Boolean!
+}
+
+type DeleteInventoryResponse {
+    success: Boolean!
+}
+
+input GetInventoryItemArgs {
+    page: Int!
+    limit: Int!
+    inventoryId: ObjectId!
+}
+
+input CreateInventoryItemInput {
+    name: String!
+    description: String!
+    price: Float!
+    inventoryId: ObjectId!
+}
+
+input EditInventoryItemInput {
+    name: String!
+    description: String!
+    price: Float!
+    inventoryItemId: ObjectId!
+}
+
+type EditInventoryItemResponse {
+    success: Boolean!
+}
+
+type DeleteInventoryItemResponse {
+    success: Boolean!
+}
+
+type Query {
+    getInventories(getInventoryArgs: GetInventoryArgs!): [Inventory]!
+    getInventoriesCount: Int!
+    getInventoryItems(getInventoryItemArgs: GetInventoryItemArgs!): [InventoryItem]!
+    getInventoryItemsCount: Int!
+}
+
+type Mutation {
+    createInventory(createInventoryInput: CreateInventoryInput!): Inventory!
+    editInventory(editInventoryInput: EditInventoryInput!): EditInventoryResponse!
+    deleteInventory(inventoryId: String!): DeleteInventoryResponse!
+    createInventoryItem(createInventoryItemInput: CreateInventoryItemInput!): InventoryItem!
+    editInventoryItem(editInventoryItemInput: EditInventoryItemInput!): EditInventoryItemResponse!
+    deleteInventoryItem(inventoryItemId: String!): DeleteInventoryItemResponse!
+}

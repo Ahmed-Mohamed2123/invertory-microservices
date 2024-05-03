@@ -21,7 +21,7 @@ export class OrderService {
               private configService: ConfigService) {
     this.rmqRecordOptions = {
       headers: {
-        ["API-KEY"]: this.configService.get("ORDER_API_KEY")
+        ["SERVICE-KEY"]: this.configService.get("ORDER_SERVICE_KEY")
       },
       priority: 3
     };

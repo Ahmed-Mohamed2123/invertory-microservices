@@ -15,7 +15,7 @@ export class ShipmentService {
               private configService: ConfigService,) {
     this.rmqRecordOptions = {
       headers: {
-        ["API-KEY"]: this.configService.get("SHIPMENT_API_KEY")
+        ["SERVICE-KEY"]: this.configService.get("SHIPMENT_SERVICE_KEY")
       },
       priority: 3
     };

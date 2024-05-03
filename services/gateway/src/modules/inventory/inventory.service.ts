@@ -21,7 +21,7 @@ export class InventoryService {
               private configService: ConfigService) {
     this.rmqRecordOptions = {
       headers: {
-        ['API-KEY']: this.configService.get("INVENTORY_API_KEY")
+        ['SERVICE-KEY']: this.configService.get("INVENTORY_SERVICE_KEY")
       },
       priority: 3,
     }

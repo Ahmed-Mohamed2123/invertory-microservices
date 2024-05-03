@@ -15,7 +15,7 @@ export class CustomerService {
   public async createCustomer(createCustomerInput: CreateCustomerInput): Promise<Customer> {
     const messagePayload = new RmqRecord(createCustomerInput, {
       headers: {
-        ['API-KEY']: this.configService.get("CUSTOMER_API_KEY")
+        ['SERVICE-KEY']: this.configService.get("CUSTOMER_SERVICE_KEY")
       },
       priority: 3,
     });

@@ -15,7 +15,7 @@ export class UserService {
               private configService: ConfigService) {
     this.rmqRecordOptions = {
       headers: {
-        ["API_KEY"]: this.configService.get("ADMIN_USER_API_KEY")
+        ["SERVICE_KEY"]: this.configService.get("ADMIN_USER_SERVICE_KEY")
       },
       priority: 3
     };

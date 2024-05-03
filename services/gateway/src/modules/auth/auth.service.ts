@@ -15,7 +15,7 @@ export class AuthService {
   public async login(loginInput: LoginInput): Promise<LoginResponse> {
     const messagePayload = new RmqRecord(loginInput, {
       headers: {
-        ['API-KEY']: this.configService.get("AUTH_API_KEY")
+        ['SERVICE_KEY']: this.configService.get("AUTH_SERVICE_KEY")
       },
       priority: 3,
     });

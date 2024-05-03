@@ -20,7 +20,7 @@ export class PaymentService {
               private configService: ConfigService,) {
     this.rmqRecordOptions = {
       headers: {
-        ["API-KEY"]: this.configService.get("PAYMENT_API_KEY")
+        ["SERVICE-KEY"]: this.configService.get("PAYMENT_SERVICE_KEY")
       },
       priority: 3
     };

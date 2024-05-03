@@ -3,7 +3,7 @@ import { Observable } from "rxjs";
 import { ConfigService } from "@nestjs/config";
 
 @Injectable()
-export class APICheckGuard implements CanActivate {
+export class ServiceKeyGuard implements CanActivate {
   constructor(private configService: ConfigService) {
   }
 
@@ -13,10 +13,11 @@ export class APICheckGuard implements CanActivate {
     const rpcContext = context.switchToRpc().getContext();
     const { properties: { headers } } = rpcContext.getMessage();
     if (!headers) return false;
-    const xKeyHeader = headers["API-KEY"] ?? headers["api-key"];
+    const serviceKeyHeader = headers["SERVICE_KEY"];
 
-    if (!xKeyHeader) return false;
-    let api_key = this.configService.get("API_KEY");
-    return api_key === xKeyHeader;
+    if (!serviceKeyHeader) return false;
+    let service_key = this.configService.get("SERVICE_KEY");
+
+    return service_key === serviceKeyHeader;
   }
 }

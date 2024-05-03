@@ -12,7 +12,7 @@ import { OrderModule } from "./modules/order/order.module";
 import { ShipmentModule } from "./modules/shipping/shipment.module";
 import { InvoiceModule } from "./modules/invoice/invoice.module";
 import { PaymentModule } from "./modules/payment/payment.module";
-import { APICheckGuard } from "./guards/api-check.guard";
+import { SecretKeyGuard } from "./guards/secret-key.guard";
 
 @Module({
   imports: [
@@ -40,7 +40,7 @@ import { APICheckGuard } from "./guards/api-check.guard";
   providers: [
     {
       provide: APP_GUARD,
-      useClass: APICheckGuard
+      useClass: SecretKeyGuard
     }
   ]
 })

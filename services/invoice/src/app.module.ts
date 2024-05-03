@@ -4,7 +4,7 @@ import { ConfigModule, ConfigService } from "@nestjs/config";
 import { MongooseModule } from "@nestjs/mongoose";
 import { ErrorInterceptor } from "./interceptors/error.interceptor";
 import { InvoiceModule } from "./modules/invoice/invoice.module";
-import { APICheckGuard } from "./guards/api-check.guard";
+import { ServiceKeyGuard } from "./guards/service-key.guard";
 
 @Module({
   imports: [
@@ -30,7 +30,7 @@ import { APICheckGuard } from "./guards/api-check.guard";
   providers: [
     {
       provide: APP_GUARD,
-      useClass: APICheckGuard
+      useClass: ServiceKeyGuard
     },
     {
       provide: APP_INTERCEPTOR,

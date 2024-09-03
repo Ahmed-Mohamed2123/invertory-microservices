@@ -1,9 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="2320b755-a448-4493-8c10-89715539bdde" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/services/user/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/services/user/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/user/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/services/user/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kubernetes/deployments/mongodb-deployment.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kubernetes/deployments/rabbitmq-deployment.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kubernetes/namespaces/dev-namespace.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kubernetes/namespaces/prod-namespace.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kubernetes/secrets/mongodb-secret.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kubernetes/secrets/rabbitmq-secret.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kubernetes/services/mongodb-service.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kubernetes/services/rabbitmq-service.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kubernetes/volumes/rabbitmq-storage.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/admin-user/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/admin-user/dockerignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/gateway/src/helpers/rabbitmq-url-getter.helper.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/admin-user/.local.env" beforeDir="false" afterPath="$PROJECT_DIR$/services/admin-user/.local.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/admin-user/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/admin-user/src/main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/auth/.local.env" beforeDir="false" afterPath="$PROJECT_DIR$/services/auth/.local.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/auth/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/auth/src/main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/customer/.local.env" beforeDir="false" afterPath="$PROJECT_DIR$/services/customer/.local.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/customer/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/customer/src/main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/gateway/.local.env" beforeDir="false" afterPath="$PROJECT_DIR$/services/gateway/.local.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/gateway/src/modules/auth/auth.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/gateway/src/modules/auth/auth.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/gateway/src/modules/customer/customer.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/gateway/src/modules/customer/customer.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/gateway/src/modules/inventory/inventory.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/gateway/src/modules/inventory/inventory.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/gateway/src/modules/invoice/invoice.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/gateway/src/modules/invoice/invoice.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/gateway/src/modules/order/order.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/gateway/src/modules/order/order.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/gateway/src/modules/payment/payment.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/gateway/src/modules/payment/payment.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/gateway/src/modules/shipping/shipment.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/gateway/src/modules/shipping/shipment.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/gateway/src/modules/user/user.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/gateway/src/modules/user/user.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/inventory/.local.env" beforeDir="false" afterPath="$PROJECT_DIR$/services/inventory/.local.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/inventory/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/inventory/src/main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/invoice/.local.env" beforeDir="false" afterPath="$PROJECT_DIR$/services/invoice/.local.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/invoice/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/invoice/src/main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/order/.local.env" beforeDir="false" afterPath="$PROJECT_DIR$/services/order/.local.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/order/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/order/src/main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/payment/.local.env" beforeDir="false" afterPath="$PROJECT_DIR$/services/payment/.local.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/payment/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/payment/src/main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/shipping/.local.env" beforeDir="false" afterPath="$PROJECT_DIR$/services/shipping/.local.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/shipping/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/shipping/src/main.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,9 +53,16 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
+  <component name="KubernetesApiProvider"><![CDATA[{
+  "isMigrated": true
+}]]></component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 8
+}]]></component>
   <component name="ProjectId" id="2dlaiV7xF4ZWuaqSiur4myOU0dw" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -26,12 +73,28 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "master",
     "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "/home/k8s-local/Desktop/invertory-microservices/services/shipping/node_modules/typescript/lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/kubernetes/volumes" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-410509235cf1-JavaScript-WS-242.20224.426" />
+      </set>
+    </attachedChunks>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -41,6 +104,7 @@
       <option name="presentableId" value="Default" />
       <updated>1710585247654</updated>
       <workItem from="1710585250042" duration="2080000" />
+      <workItem from="1725276695764" duration="15169000" />
     </task>
     <servers />
   </component>

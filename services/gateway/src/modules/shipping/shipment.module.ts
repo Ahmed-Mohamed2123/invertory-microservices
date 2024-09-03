@@ -5,6 +5,7 @@ import { ConfigModule, ConfigService } from "@nestjs/config";
 import { ShipmentService } from "./shipment.service";
 import { ShipmentResolver } from "./shipment.resolver";
 import { ObjectIdScalar } from "../../scallers/object-id.scalar";
+import {getRabbitmqUrl} from "../../helpers/rabbitmq-url-getter.helper";
 
 @Module({
   imports: [
@@ -13,13 +14,20 @@ import { ObjectIdScalar } from "../../scallers/object-id.scalar";
       {
         name: ClientName.SHIPMENT,
         imports: [ConfigModule],
-        useFactory: async (configService: ConfigService) => ({
-          transport: Transport.RMQ,
-          options: {
-            urls: [configService.get<string>("RMQ_URL")],
-            queue: configService.get<string>("RMQ_SHIPMENT_QUEUE")
+        useFactory: async (configService: ConfigService) => {
+          const RMQ_PORT = configService.get<string>("RMQ_PORT");
+          const RMQ_PASS = configService.get<string>("RMQ_PASS");
+          const RMQ_USER = configService.get<string>("RMQ_USER");
+          const rmqUrl = getRabbitmqUrl(RMQ_USER, RMQ_PASS, RMQ_PORT);
+
+          return {
+            transport: Transport.RMQ,
+            options: {
+              urls: [rmqUrl],
+              queue: configService.get<string>("RMQ_SHIPMENT_QUEUE")
+            }
           }
-        }),
+        },
         inject: [ConfigService]
       }
     ])

@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mongodb
+  namespace: dev
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: mongodb-pod
+    spec:
+      containers:
+        - name: mongodb
+          image: mongo:latest
+          ports:
+            - containerPort: 27017
+      nodeSelector:
+        type: database
+      tolerations:
+        - key: "dedicated"
+          operator: "Equal"
+          value: "mongodb"
+          effect: "NoSchedule"
+  selector:
+    matchLabels:
+      app: mongodb-pod

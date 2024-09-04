@@ -8,13 +8,20 @@ spec:
   template:
     metadata:
       labels:
-        app: mongodb-pod
+        app: mongodb
     spec:
       containers:
         - name: mongodb
           image: mongo:latest
           ports:
             - containerPort: 27017
+          volumeMounts:
+            - name: mongodb-storage
+              mountPath: /data/db
+      volumes:
+        - name: mongodb-storage
+          persistentVolumeClaim:
+            claimName: mongodb-pvc
       nodeSelector:
         type: database
       tolerations:
@@ -24,4 +31,4 @@ spec:
           effect: "NoSchedule"
   selector:
     matchLabels:
-      app: mongodb-pod
+      app: mongodb

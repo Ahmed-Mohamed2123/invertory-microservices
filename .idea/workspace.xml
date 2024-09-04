@@ -5,35 +5,52 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2320b755-a448-4493-8c10-89715539bdde" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/kubernetes/deployments/mongodb-deployment.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kubernetes/deployments/rabbitmq-deployment.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kubernetes/namespaces/dev-namespace.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kubernetes/namespaces/prod-namespace.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kubernetes/secrets/mongodb-secret.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kubernetes/secrets/rabbitmq-secret.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kubernetes/services/mongodb-service.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kubernetes/services/rabbitmq-service.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kubernetes/volumes/rabbitmq-storage.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/admin-user/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/admin-user/dockerignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/gateway/src/helpers/rabbitmq-url-getter.helper.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/kubernetes/config-map/rabbitmq-configmap.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kubernetes/deployments/admin-user-deployment.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kubernetes/secrets/services-keys-secret.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kubernetes/services/rabbitmq-management-service.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kubernetes/services/rabbitmq-service__.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kubernetes/volumes/persistent-volume-claim/mongodb-pvc.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kubernetes/volumes/persistent-volume-claim/rabbitmq-pvc.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kubernetes/volumes/persistent-volume/mongodb-pv.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kubernetes/volumes/persistent-volume/rabbitmq-pv.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kubernetes/deployments/mongodb-deployment.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/kubernetes/deployments/mongodb-deployment.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kubernetes/deployments/rabbitmq-deployment.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/kubernetes/deployments/rabbitmq-deployment.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kubernetes/secrets/mongodb-secret.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/kubernetes/secrets/mongodb-secret.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kubernetes/secrets/rabbitmq-secret.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/kubernetes/secrets/rabbitmq-secret.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kubernetes/services/mongodb-service.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/kubernetes/services/mongodb-service.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kubernetes/services/rabbitmq-service.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/kubernetes/services/rabbitmq-service.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kubernetes/volumes/rabbitmq-storage.yaml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/services/admin-user/.local.env" beforeDir="false" afterPath="$PROJECT_DIR$/services/admin-user/.local.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/admin-user/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/admin-user/src/main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/admin-user/src/modules/admin-user/admin-user.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/admin-user/src/modules/admin-user/admin-user.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/admin-user/src/modules/admin-user/admin-user.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/admin-user/src/modules/admin-user/admin-user.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/auth/.local.env" beforeDir="false" afterPath="$PROJECT_DIR$/services/auth/.local.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/auth/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/auth/src/main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/auth/src/modules/auth/auth.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/auth/src/modules/auth/auth.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/customer/.local.env" beforeDir="false" afterPath="$PROJECT_DIR$/services/customer/.local.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/customer/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/customer/src/main.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/gateway/.local.env" beforeDir="false" afterPath="$PROJECT_DIR$/services/gateway/.local.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/gateway/src/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/gateway/src/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/gateway/src/guards/super-admin.guard.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/gateway/src/guards/super-admin.guard.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/gateway/src/helpers/rabbitmq-url-getter.helper.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/gateway/src/helpers/rabbitmq-url-getter.helper.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/gateway/src/modules/auth/auth.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/gateway/src/modules/auth/auth.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/gateway/src/modules/auth/stratigies/jwt.strategy.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/gateway/src/modules/auth/stratigies/jwt.strategy.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/gateway/src/modules/customer/customer.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/gateway/src/modules/customer/customer.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/gateway/src/modules/inventory/inventory.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/gateway/src/modules/inventory/inventory.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/gateway/src/modules/invoice/invoice.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/gateway/src/modules/invoice/invoice.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/gateway/src/modules/order/order.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/gateway/src/modules/order/order.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/gateway/src/modules/payment/payment.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/gateway/src/modules/payment/payment.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/gateway/src/modules/shipping/shipment.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/gateway/src/modules/shipping/shipment.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/gateway/src/modules/user/user.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/gateway/src/modules/user/user.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/gateway/src/modules/user/dtos/inputs/create-system-user.input.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/gateway/src/modules/admin-user/dtos/inputs/create-system-user.input.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/gateway/src/modules/user/enums/role-type.enum.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/gateway/src/modules/admin-user/enums/role-type.enum.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/gateway/src/modules/user/models/user.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/gateway/src/modules/admin-user/models/admin-user.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/gateway/src/modules/user/user.gql" beforeDir="false" afterPath="$PROJECT_DIR$/services/gateway/src/modules/admin-user/admin-user.gql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/gateway/src/modules/user/user.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/gateway/src/modules/admin-user/admin-user.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/gateway/src/modules/user/user.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/gateway/src/modules/admin-user/admin-user.resolver.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/gateway/src/modules/user/user.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/gateway/src/modules/admin-user/admin-user.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/gateway/src/schemas/graphql.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/gateway/src/schemas/graphql.d.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/inventory/.local.env" beforeDir="false" afterPath="$PROJECT_DIR$/services/inventory/.local.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/inventory/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/inventory/src/main.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/invoice/.local.env" beforeDir="false" afterPath="$PROJECT_DIR$/services/invoice/.local.env" afterDir="false" />
@@ -85,6 +102,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/kubernetes/volumes/persistent-volume" />
       <recent name="$PROJECT_DIR$/kubernetes/volumes" />
     </key>
   </component>
@@ -104,7 +122,7 @@
       <option name="presentableId" value="Default" />
       <updated>1710585247654</updated>
       <workItem from="1710585250042" duration="2080000" />
-      <workItem from="1725276695764" duration="15169000" />
+      <workItem from="1725276695764" duration="31786000" />
     </task>
     <servers />
   </component>

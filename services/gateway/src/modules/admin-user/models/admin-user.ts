@@ -2,8 +2,8 @@ import { Field, ObjectType } from "@nestjs/graphql";
 import { ObjectId } from "mongodb";
 import { ObjectIdScalar } from "../../../scallers/object-id.scalar";
 
-@ObjectType("User")
-export class User {
+@ObjectType("AdminUser")
+export class AdminUser {
   @Field(() => ObjectIdScalar)
   _id: ObjectId;
 

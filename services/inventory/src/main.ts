@@ -3,7 +3,7 @@ import { RmqOptions, Transport } from "@nestjs/microservices";
 import { AppModule } from "./app.module";
 
 async function bootstrap() {
-  const RMQ_URL = `amqp://${process.env.RMQ_USER}:${process.env.RMQ_PASS}@localhost:${process.env.RMQ_PORT}`;
+  const RMQ_URL = `amqp://${process.env.RMQ_USER}:${process.env.RMQ_PASS}@${process.env.RMQ_HOST}:${process.env.RMQ_PORT}`;
 
   const app = await NestFactory.createMicroservice(AppModule, {
     transport: Transport.RMQ,

@@ -5,7 +5,7 @@ import { Strategy, ExtractJwt } from "passport-jwt";
 import { ConfigService } from "@nestjs/config";
 import { ClientProxy, RmqRecord } from "@nestjs/microservices";
 import { ClientName } from "../../../enums/client-name.enum";
-import { User } from "../../../schemas/graphql";
+import { AdminUser } from "../../../schemas/graphql";
 
 @Injectable()
 export class JwtStrategy extends PassportStrategy(Strategy, "jwt") {
@@ -25,14 +25,14 @@ export class JwtStrategy extends PassportStrategy(Strategy, "jwt") {
       priority: 3,
     });
 
-    const userStream$ = this.adminUserClient.send("get-admin-user-by-id", messagePayload);
+    const userStream$ = this.adminUserClient.send("get-admin-admin-user-by-id", messagePayload);
     const execution$ = userStream$.pipe(
-      concatMap((user: User) => {
-        if (!user) {
+      concatMap((adminUser: AdminUser) => {
+        if (!adminUser) {
           return throwError(() => new UnauthorizedException());
         }
 
-        return of(user);
+        return of(adminUser);
       })
     );
 

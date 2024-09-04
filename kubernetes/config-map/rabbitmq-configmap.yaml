@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: rabbitmq-config-map
+  namespace: dev
+data:
+  RMQ_ADMIN_USER_QUEUE: "admins-users"
+  RMQ_AUTHENTICATION_QUEUE: "authentication"
+  RMQ_CUSTOMER_QUEUE: "customers"
+  RMQ_INVENTORY_QUEUE: "inventories"
+  RMQ_INVOICE_QUEUE: "invoices"
+  RMQ_ORDER_QUEUE: "orders"
+  RMQ_PAYMENT_QUEUE: "payments"
+  RMQ_SHIPMENT_QUEUE: "shipments"

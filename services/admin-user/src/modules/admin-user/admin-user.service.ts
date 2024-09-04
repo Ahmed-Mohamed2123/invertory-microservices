@@ -19,7 +19,7 @@ export class AdminUserService {
 
     const userLookupStream$ = from(this.adminUserRepository.getUserByUsername(username)).pipe(
       concatMap((foundUser: AdminUser) =>
-        foundUser ? throwError(() => new RpcException("User already exists!!!")) : of(null)
+        foundUser ? throwError(() => new RpcException("AdminUser already exists!!!")) : of(null)
       )
     );
 
@@ -53,7 +53,7 @@ export class AdminUserService {
     const userLookupStream$ = from(this.adminUserRepository.getUserById(userId)).pipe(
       concatMap((user: AdminUser) =>
         user ?
-          of(user) : throwError(() => new RpcException("This User does not found!!!")))
+          of(user) : throwError(() => new RpcException("This AdminUser does not found!!!")))
     );
 
     const confirmMessageProcessingStream$ = () => tap(() => confirmMessageProcessing(context));
@@ -70,7 +70,7 @@ export class AdminUserService {
     const userLookupStream$ = from(this.adminUserRepository.getUserCredentialsByUsername(username)).pipe(
       concatMap((user: AdminUser) =>
         user ?
-          of(user) : throwError(() => new RpcException("This User does not found!!!")))
+          of(user) : throwError(() => new RpcException("This AdminUser does not found!!!")))
     );
 
     const confirmMessageProcessingStream$ = () => tap(() => confirmMessageProcessing(context));

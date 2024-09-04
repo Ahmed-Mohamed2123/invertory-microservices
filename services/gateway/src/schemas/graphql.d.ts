@@ -8,6 +8,12 @@
 /* tslint:disable */
 /* eslint-disable */
 
+export class CreateSystemUserInput {
+    username: string;
+    password: string;
+    roles: string[];
+}
+
 export class LoginInput {
     username: string;
     password: string;
@@ -92,17 +98,30 @@ export class UpdateShipmentStatusInput {
     deliveryStatus: string;
 }
 
-export class CreateSystemUserInput {
+export class AdminUser {
     username: string;
     password: string;
     roles: string[];
+    createdAt: Date;
+    updatedAt: Date;
+    _id: ObjectId;
 }
 
-export class LoginResponse {
-    token: string;
+export abstract class IQuery {
+    abstract users(): AdminUser[] | Promise<AdminUser[]>;
+    abstract customers(): Customer[] | Promise<Customer[]>;
+    abstract getInventories(getInventoryArgs: GetInventoryArgs): Nullable<Inventory>[] | Promise<Nullable<Inventory>[]>;
+    abstract getInventoriesCount(): number | Promise<number>;
+    abstract getInventoryItems(getInventoryItemArgs: GetInventoryItemArgs): Nullable<InventoryItem>[] | Promise<Nullable<InventoryItem>[]>;
+    abstract getInventoryItemsCount(): number | Promise<number>;
+    abstract getCustomerInvoices(getCustomerInvoiceArgs: GetCustomerInvoiceArgs): Invoice[] | Promise<Invoice[]>;
+    abstract getCustomerInvoicesCount(customerId: string): number | Promise<number>;
+    abstract getCustomerOrdersDetails(customerId: string): CustomerOrderDetail[] | Promise<CustomerOrderDetail[]>;
+    abstract getShipmentById(shipmentId: string): Shipment | Promise<Shipment>;
 }
 
 export abstract class IMutation {
+    abstract createSystemUser(createSystemUserInput: CreateSystemUserInput): AdminUser | Promise<AdminUser>;
     abstract login(loginInput: LoginInput): LoginResponse | Promise<LoginResponse>;
     abstract createCustomer(createCustomerInput: CreateCustomerInput): Customer | Promise<Customer>;
     abstract createInventory(createInventoryInput: CreateInventoryInput): Inventory | Promise<Inventory>;
@@ -119,7 +138,10 @@ export abstract class IMutation {
     abstract checkout(checkoutInput: CheckoutInput): CheckoutResponse | Promise<CheckoutResponse>;
     abstract initiateShipment(orderId: string): Shipment | Promise<Shipment>;
     abstract updateShipmentStatus(updateShipmentStatusInput: UpdateShipmentStatusInput): ShipmentStatusUpdateResponse | Promise<ShipmentStatusUpdateResponse>;
-    abstract createSystemUser(createSystemUserInput: CreateSystemUserInput): User | Promise<User>;
+}
+
+export class LoginResponse {
+    token: string;
 }
 
 export class Customer {
@@ -130,19 +152,6 @@ export class Customer {
     createdAt: Date;
     updatedAt: Date;
     _id: ObjectId;
-}
-
-export abstract class IQuery {
-    abstract customers(): Customer[] | Promise<Customer[]>;
-    abstract getInventories(getInventoryArgs: GetInventoryArgs): Nullable<Inventory>[] | Promise<Nullable<Inventory>[]>;
-    abstract getInventoriesCount(): number | Promise<number>;
-    abstract getInventoryItems(getInventoryItemArgs: GetInventoryItemArgs): Nullable<InventoryItem>[] | Promise<Nullable<InventoryItem>[]>;
-    abstract getInventoryItemsCount(): number | Promise<number>;
-    abstract getCustomerInvoices(getCustomerInvoiceArgs: GetCustomerInvoiceArgs): Invoice[] | Promise<Invoice[]>;
-    abstract getCustomerInvoicesCount(customerId: string): number | Promise<number>;
-    abstract getCustomerOrdersDetails(customerId: string): CustomerOrderDetail[] | Promise<CustomerOrderDetail[]>;
-    abstract getShipmentById(shipmentId: string): Shipment | Promise<Shipment>;
-    abstract users(): User[] | Promise<User[]>;
 }
 
 export class Inventory {
@@ -243,15 +252,6 @@ export class Shipment {
 
 export class ShipmentStatusUpdateResponse {
     success: boolean;
-}
-
-export class User {
-    username: string;
-    password: string;
-    roles: string[];
-    createdAt: Date;
-    updatedAt: Date;
-    _id: ObjectId;
 }
 
 export type ObjectId = any;

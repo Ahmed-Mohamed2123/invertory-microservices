@@ -1,14 +1,14 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: rabbitmq
+  name: rabbitmq-management
   namespace: dev
 spec:
-  type: ClusterIP
+  type: NodePort
   ports:
-    - port: 5672
-      targetPort: 5672
+    - port: 15672
+      targetPort: 15672
       protocol: TCP
-      name: rabbitmq
+      name: rabbitmq-management
   selector:
     app: rabbitmq

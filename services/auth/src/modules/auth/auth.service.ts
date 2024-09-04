@@ -29,7 +29,7 @@ export class AuthService {
       priority: 3
     });
 
-    const userStream$ = this.userClient.send("get-admin-user-credentials-by-username", messagePayload).pipe(
+    const userStream$ = this.userClient.send("get-admin-admin-user-credentials-by-username", messagePayload).pipe(
       tap((foundUser: IUser) => userData = foundUser)
     );
 

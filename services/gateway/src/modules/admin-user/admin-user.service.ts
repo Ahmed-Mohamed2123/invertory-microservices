@@ -3,12 +3,12 @@ import { lastValueFrom } from "rxjs";
 import { ClientProxy, RmqRecord } from "@nestjs/microservices";
 import { ClientName } from "../../enums/client-name.enum";
 import { CreateSystemUserInput } from "./dtos/inputs/create-system-user.input";
-import { User } from "../../schemas/graphql";
+import { AdminUser } from "../../schemas/graphql";
 import { RmqRecordOptions } from "@nestjs/microservices/record-builders/rmq.record-builder";
 import { ConfigService } from "@nestjs/config";
 
 @Injectable()
-export class UserService {
+export class AdminUserService {
   private readonly rmqRecordOptions: RmqRecordOptions;
 
   constructor(@Inject(ClientName.ADMIN_USER) private userClient: ClientProxy,
@@ -21,10 +21,10 @@ export class UserService {
     };
   }
 
-  public async createSystemUser(createSystemUserInput: CreateSystemUserInput): Promise<User> {
+  public async createSystemUser(createSystemUserInput: CreateSystemUserInput): Promise<AdminUser> {
     const messagePayload = new RmqRecord(createSystemUserInput, this.rmqRecordOptions);
 
-    const execution$ = this.userClient.send("create-system-admin-user", messagePayload);
+    const execution$ = this.userClient.send("create-system-admin-admin-user", messagePayload);
     return lastValueFrom(execution$);
   }
 }

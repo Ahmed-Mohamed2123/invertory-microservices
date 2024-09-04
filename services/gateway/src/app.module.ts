@@ -5,7 +5,7 @@ import { ConfigModule } from "@nestjs/config";
 import { ApolloDriver, ApolloDriverConfig } from "@nestjs/apollo";
 import { APP_GUARD } from "@nestjs/core";
 import { AuthModule } from "./modules/auth/auth.module";
-import { UserModule } from "./modules/user/user.module";
+import { AdminUserModule } from "./modules/admin-user/admin-user.module";
 import { CustomerModule } from "./modules/customer/customer.module";
 import { InventoryModule } from "./modules/inventory/inventory.module";
 import { OrderModule } from "./modules/order/order.module";
@@ -28,7 +28,7 @@ import { SecretKeyGuard } from "./guards/secret-key.guard";
       },
       context: ({ req }) => ({ req })
     }),
-    UserModule,
+    AdminUserModule,
     AuthModule,
     CustomerModule,
     InventoryModule,

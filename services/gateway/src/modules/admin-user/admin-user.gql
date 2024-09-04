@@ -1,7 +1,7 @@
 scalar ObjectId
 scalar Date
 
-type User {
+type AdminUser {
     username: String!
     password: String!
     roles: [String!]!
@@ -17,9 +17,9 @@ input CreateSystemUserInput {
 }
 
 type Query {
-    users: [User!]!
+    users: [AdminUser!]!
 }
 
 type Mutation {
-    createSystemUser(createSystemUserInput: CreateSystemUserInput!): User!
+    createSystemUser(createSystemUserInput: CreateSystemUserInput!): AdminUser!
 }

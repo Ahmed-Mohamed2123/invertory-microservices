@@ -4,11 +4,15 @@ metadata:
   name: rabbitmq
   namespace: dev
 spec:
-  type: ClusterIP
+  type: NodePort
   ports:
     - port: 5672
       targetPort: 5672
       protocol: TCP
       name: rabbitmq
+    - port: 15672
+      targetPort: 15672
+      protocol: TCP
+      name: rabbitmq-management
   selector:
     app: rabbitmq

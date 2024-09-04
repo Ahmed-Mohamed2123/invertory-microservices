@@ -1,6 +1,6 @@
 import { Injectable, CanActivate, ExecutionContext } from "@nestjs/common";
 import { GqlExecutionContext } from "@nestjs/graphql";
-import { RoleType } from "../modules/user/enums/role-type.enum";
+import { RoleType } from "../modules/admin-user/enums/role-type.enum";
 
 @Injectable()
 export class SuperAdminGuard implements CanActivate {

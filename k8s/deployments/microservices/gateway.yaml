@@ -1,0 +1,119 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gateway
+  namespace: dev
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: gateway
+    spec:
+      containers:
+        - name: gateway
+          image: ahmedshabana22/gateway:1.1.2
+          resources:
+            requests:
+              memory: "256Mi"
+              cpu: "500m"
+            limits:
+              memory: "512Mi"
+              cpu: "1000m"
+          envFrom:
+            - configMapRef:
+                name: rabbitmq-queues-config
+            - secretRef:
+                name: services-keys
+            - secretRef:
+                name: jwt-secret-key
+            - secretRef:
+                name: mongodb-config
+            - secretRef:
+                name: rabbitmq-config
+#          env:
+#            - name: ADMIN_USER_SERVICE_KEY
+#              valueFrom:
+#                secretKeyRef:
+#                  name: services-keys
+#                  key: ADMIN_USER_KEY
+#            - name: AUTH_SERVICE_KEY
+#              valueFrom:
+#                secretKeyRef:
+#                  name: services-keys
+#                  key: AUTH_KEY
+#            - name: CUSTOMER_SERVICE_KEY
+#              valueFrom:
+#                secretKeyRef:
+#                  name: services-keys
+#                  key: CUSTOMER_KEY
+#            - name: INVENTORY_SERVICE_KEY
+#              valueFrom:
+#                secretKeyRef:
+#                  name: services-keys
+#                  key: INVENTORY_KEY
+#            - name: INVOICE_SERVICE_KEY
+#              valueFrom:
+#                secretKeyRef:
+#                  name: services-keys
+#                  key: INVOICE_KEY
+#            - name: PAYMENT_SERVICE_KEY
+#              valueFrom:
+#                secretKeyRef:
+#                  name: services-keys
+#                  key: PAYMENT_KEY
+#            - name: SHIPPING_SERVICE_KEY
+#              valueFrom:
+#                secretKeyRef:
+#                  name: services-keys
+#                  key: SHIPPING_KEY
+#            - name: ORDER_SERVICE_KEY
+#              valueFrom:
+#                secretKeyRef:
+#                  name: services-keys
+#                  key: ORDER_KEY
+#            - name: JWT_SECRET_KEY
+#              valueFrom:
+#                secretKeyRef:
+#                  name: jwt-secret-key
+#                  key: JWT_SECRET_KEY
+#            - name: MONGO_DB_HOST
+#              valueFrom:
+#                secretKeyRef:
+#                  name: mongodb-config
+#                  key: MONGO_DB_HOST
+#            - name: MONGO_DB_NAME
+#              valueFrom:
+#                secretKeyRef:
+#                  name: mongodb-config
+#                  key: MONGO_DB_NAME
+#            - name: MONGO_DB_PORT
+#              valueFrom:
+#                secretKeyRef:
+#                  name: mongodb-config
+#                  key: MONGO_DB_PORT
+#            - name: RMQ_USER
+#              valueFrom:
+#                secretKeyRef:
+#                  name: rabbitmq-config
+#                  key: RMQ_USER
+#            - name: RMQ_PASS
+#              valueFrom:
+#                secretKeyRef:
+#                  name: rabbitmq-config
+#                  key: RMQ_PASS
+#            - name: RMQ_PORT
+#              valueFrom:
+#                secretKeyRef:
+#                  name: rabbitmq-config
+#                  key: RMQ_PORT
+#            - name: RMQ_HOST
+#              valueFrom:
+#                secretKeyRef:
+#                  name: rabbitmq-config
+#                  key: RMQ_HOST
+      nodeSelector:
+        type: backend
+  selector:
+    matchLabels:
+      app: gateway

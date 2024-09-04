@@ -1,66 +1,73 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: admin-user
+  name: invoice
   namespace: dev
 spec:
   replicas: 1
   template:
     metadata:
       labels:
-        app: admin-user
+        app: invoice
     spec:
       containers:
-        - name: admin-admin-user
-          image: ahmedshabana22/admin-user:1.2
+        - name: invoice
+          image: ahmedshabana22/invoice:1.2
+          resources:
+            requests:
+              memory: "256Mi"
+              cpu: "500m"
+            limits:
+              memory: "512Mi"
+              cpu: "1000m"
           env:
-            - name: RMQ_ADMIN_USER_QUEUE
+            - name: RMQ_INVOICE_QUEUE
               valueFrom:
                 configMapKeyRef:
-                  name: rabbitmq-config-map
-                  key: RMQ_ADMIN_USER_QUEUE
+                  name: rabbitmq-queues-config
+                  key: RMQ_INVOICE_QUEUE
             - name: SERVICE_KEY
               valueFrom:
                 secretKeyRef:
                   name: services-keys
-                  key: ADMIN_USER_KEY
+                  key: INVOICE_SERVICE_KEY
             - name: MONGO_DB_HOST
               valueFrom:
                 secretKeyRef:
-                  name: db-config-sec
+                  name: mongodb-config
                   key: MONGO_DB_HOST
             - name: MONGO_DB_NAME
               valueFrom:
                 secretKeyRef:
-                  name: db-config-sec
+                  name: mongodb-config
                   key: MONGO_DB_NAME
             - name: MONGO_DB_PORT
               valueFrom:
                 secretKeyRef:
-                  name: db-config-sec
+                  name: mongodb-config
                   key: MONGO_DB_PORT
             - name: RMQ_USER
               valueFrom:
                 secretKeyRef:
-                  name: rabbitmq-secret
+                  name: rabbitmq-config
                   key: RMQ_USER
             - name: RMQ_PASS
               valueFrom:
                 secretKeyRef:
-                  name: rabbitmq-secret
+                  name: rabbitmq-config
                   key: RMQ_PASS
             - name: RMQ_PORT
               valueFrom:
                 secretKeyRef:
-                  name: rabbitmq-secret
+                  name: rabbitmq-config
                   key: RMQ_PORT
             - name: RMQ_HOST
               valueFrom:
                 secretKeyRef:
-                  name: rabbitmq-secret
+                  name: rabbitmq-config
                   key: RMQ_HOST
       nodeSelector:
         type: backend
   selector:
     matchLabels:
-      app: admin-user
+      app: invoice

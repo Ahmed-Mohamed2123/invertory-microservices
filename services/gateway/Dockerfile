@@ -41,6 +41,7 @@ RUN npm ci --omit=dev
 
 # Copy production build
 COPY --from=development /app/dist/ ./dist/
+COPY --from=development /app/src/ ./src/
 
 # Start application
 CMD [ "node", "dist/main.js" ]

@@ -1,0 +1,73 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: customer
+  namespace: dev
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: customer
+    spec:
+      containers:
+        - name: customer
+          image: ahmedshabana22/customer:1.2
+          resources:
+            requests:
+              memory: "256Mi"
+              cpu: "500m"
+            limits:
+              memory: "512Mi"
+              cpu: "1000m"
+          env:
+            - name: RMQ_CUSTOMER_QUEUE
+              valueFrom:
+                configMapKeyRef:
+                  name: rabbitmq-queues-config
+                  key: RMQ_CUSTOMER_QUEUE
+            - name: SERVICE_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: services-keys
+                  key: CUSTOMER_SERVICE_KEY
+            - name: MONGO_DB_HOST
+              valueFrom:
+                secretKeyRef:
+                  name: mongodb-config
+                  key: MONGO_DB_HOST
+            - name: MONGO_DB_NAME
+              valueFrom:
+                secretKeyRef:
+                  name: mongodb-config
+                  key: MONGO_DB_NAME
+            - name: MONGO_DB_PORT
+              valueFrom:
+                secretKeyRef:
+                  name: mongodb-config
+                  key: MONGO_DB_PORT
+            - name: RMQ_USER
+              valueFrom:
+                secretKeyRef:
+                  name: rabbitmq-config
+                  key: RMQ_USER
+            - name: RMQ_PASS
+              valueFrom:
+                secretKeyRef:
+                  name: rabbitmq-config
+                  key: RMQ_PASS
+            - name: RMQ_PORT
+              valueFrom:
+                secretKeyRef:
+                  name: rabbitmq-config
+                  key: RMQ_PORT
+            - name: RMQ_HOST
+              valueFrom:
+                secretKeyRef:
+                  name: rabbitmq-config
+                  key: RMQ_HOST
+      nodeSelector:
+        type: backend
+  selector:
+    matchLabels:
+      app: customer

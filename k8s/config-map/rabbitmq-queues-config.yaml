@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: rabbitmq-config-map
+  name: rabbitmq-queues-config
   namespace: dev
 data:
   RMQ_ADMIN_USER_QUEUE: "admins-users"

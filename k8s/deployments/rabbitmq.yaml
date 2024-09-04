@@ -24,12 +24,12 @@ spec:
             - name: RABBITMQ_DEFAULT_USER
               valueFrom:
                 secretKeyRef:
-                  name: rabbitmq-secret
+                  name: rabbitmq-config
                   key: RMQ_USER
             - name: RABBITMQ_DEFAULT_PASS
               valueFrom:
                 secretKeyRef:
-                  name: rabbitmq-secret
+                  name: rabbitmq-config
                   key: RMQ_PASS
           volumeMounts:
             - name: rabbitmq-data

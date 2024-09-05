@@ -5,6 +5,7 @@ import { ConfigService } from "@nestjs/config";
 import { ClientName } from "../../enums/client-name.enum";
 import { LoginInput } from "./dtos/inputs/login.input";
 import { LoginResponse } from "../../schemas/graphql";
+import {logger} from "../../utils/winston";
 
 @Injectable()
 export class AuthService {
@@ -19,7 +20,10 @@ export class AuthService {
       },
       priority: 3,
     });
-
+    logger.logMessage({
+      title: "login message payload: ",
+      data: messagePayload
+    })
     const execution$ = this.authenticationClient.send("login", messagePayload);
     return lastValueFrom(execution$);
   }

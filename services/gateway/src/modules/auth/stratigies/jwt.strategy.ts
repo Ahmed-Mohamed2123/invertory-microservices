@@ -20,12 +20,12 @@ export class JwtStrategy extends PassportStrategy(Strategy, "jwt") {
   async validate({ signature }: { signature: string }) {
     const messagePayload = new RmqRecord(signature, {
       headers: {
-        ['API_KEY']: this.configService.get("USER_API_KEY")
+        ['SERVICE_KEY']: this.configService.get("ADMIN_USER_SERVICE_KEY")
       },
       priority: 3,
     });
 
-    const userStream$ = this.adminUserClient.send("get-admin-admin-user-by-id", messagePayload);
+    const userStream$ = this.adminUserClient.send("get-admin-user-by-id", messagePayload);
     const execution$ = userStream$.pipe(
       concatMap((adminUser: AdminUser) => {
         if (!adminUser) {

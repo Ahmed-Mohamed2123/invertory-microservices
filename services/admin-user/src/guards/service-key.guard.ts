@@ -1,6 +1,7 @@
 import { Injectable, CanActivate, ExecutionContext } from "@nestjs/common";
 import { Observable } from "rxjs";
 import { ConfigService } from "@nestjs/config";
+import {logger} from "../utils/winston";
 
 @Injectable()
 export class ServiceKeyGuard implements CanActivate {
@@ -13,7 +14,6 @@ export class ServiceKeyGuard implements CanActivate {
     const rpcContext = context.switchToRpc().getContext();
     const { properties: { headers } } = rpcContext.getMessage();
     if (!headers) return false;
-
     const serviceKeyHeader = headers["SERVICE_KEY"];
 
     if (!serviceKeyHeader) return false;

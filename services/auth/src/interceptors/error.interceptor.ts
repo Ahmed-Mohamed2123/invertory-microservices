@@ -2,6 +2,7 @@ import { Injectable, NestInterceptor, ExecutionContext, CallHandler, HttpExcepti
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { RmqContext, RpcException } from "@nestjs/microservices";
+import {logger} from "../utils/winston";
 
 @Injectable()
 export class ErrorInterceptor implements NestInterceptor {
@@ -30,7 +31,7 @@ export class ErrorInterceptor implements NestInterceptor {
           channel.nack(originalMessage);
           return throwError(() => new RpcException(error));
         }
-
+        
         channel.ack(originalMessage);
         return throwError(() => error);
       }),

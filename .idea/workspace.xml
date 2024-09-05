@@ -5,33 +5,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2320b755-a448-4493-8c10-89715539bdde" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/kubernetes/deployments/microservices/auth.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kubernetes/deployments/microservices/customer.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kubernetes/deployments/microservices/gateway.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kubernetes/deployments/microservices/inventory.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kubernetes/deployments/microservices/invoice.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kubernetes/deployments/microservices/order.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kubernetes/deployments/microservices/payment.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kubernetes/deployments/microservices/shipping.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kubernetes/secrets/jwt-secret-key.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kubernetes/secrets/services-keys.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kubernetes/secrets/stripe-secret-key.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kubernetes/services/gateway-service.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/k8s/secrets/gateway-secret-key.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/admin-user/src/utils/winston.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/auth/src/utils/winston.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/gateway/src/utils/winston.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kubernetes/config-map/rabbitmq-configmap.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/kubernetes/config-map/rabbitmq-queues-config.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kubernetes/deployments/admin-user-deployment.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/kubernetes/deployments/microservices/admin-user.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kubernetes/deployments/mongodb-deployment.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/kubernetes/deployments/mongodb.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kubernetes/deployments/rabbitmq-deployment.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/kubernetes/deployments/rabbitmq.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kubernetes/secrets/mongodb-secret.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/kubernetes/secrets/mongodb.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kubernetes/secrets/rabbitmq-secret.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/kubernetes/secrets/rabbitmq.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kubernetes/secrets/services-keys-secret.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kubernetes/services/mongodb-service.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/kubernetes/services/mongodb.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kubernetes/services/rabbitmq-management-service.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/kubernetes/services/rabbitmq-management.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kubernetes/services/rabbitmq-service.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/kubernetes/services/rabbitmq.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kubernetes/services/rabbitmq-service__.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/gateway/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/services/gateway/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/order/src/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/order/src/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/shipping/src/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/shipping/src/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/k8s/deployments/microservices/admin-user.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/k8s/deployments/microservices/admin-user.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/k8s/deployments/microservices/auth.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/k8s/deployments/microservices/auth.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/k8s/deployments/microservices/gateway.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/k8s/deployments/microservices/gateway.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/k8s/services/gateway-service.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/k8s/services/gateway.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/admin-user/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/services/admin-user/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/admin-user/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/services/admin-user/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/admin-user/src/guards/service-key.guard.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/admin-user/src/guards/service-key.guard.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/admin-user/src/modules/admin-user/admin-user.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/admin-user/src/modules/admin-user/admin-user.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/auth/src/interceptors/error.interceptor.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/auth/src/interceptors/error.interceptor.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/auth/src/modules/auth/auth.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/auth/src/modules/auth/auth.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/auth/src/modules/auth/auth.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/auth/src/modules/auth/auth.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/gateway/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/services/gateway/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/gateway/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/services/gateway/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/gateway/src/guards/secret-key.guard.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/gateway/src/guards/secret-key.guard.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/gateway/src/modules/admin-user/admin-user.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/gateway/src/modules/admin-user/admin-user.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/gateway/src/modules/auth/auth.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/gateway/src/modules/auth/auth.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/gateway/src/modules/auth/stratigies/jwt.strategy.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/gateway/src/modules/auth/stratigies/jwt.strategy.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/gateway/src/modules/customer/customer.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/gateway/src/modules/customer/customer.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,22 +52,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/home/k8s-local/Desktop/invertory-microservices/services/shipping/node_modules/typescript/lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "/home/k8s-local/Desktop/invertory-microservices/services/admin-user/src",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "/home/k8s-local/Desktop/invertory-microservices/services/shipping/node_modules/typescript/lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/services/admin-user/src" />
+      <recent name="$PROJECT_DIR$/services/auth/src" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/kubernetes/deployments/microservices" />
       <recent name="$PROJECT_DIR$/kubernetes/volumes/persistent-volume" />
@@ -95,7 +96,7 @@
       <updated>1710585247654</updated>
       <workItem from="1710585250042" duration="2080000" />
       <workItem from="1725276695764" duration="41790000" />
-      <workItem from="1725456859824" duration="5622000" />
+      <workItem from="1725456859824" duration="17612000" />
     </task>
     <servers />
   </component>
